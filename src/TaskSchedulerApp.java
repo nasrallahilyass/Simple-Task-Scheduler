@@ -3,6 +3,14 @@ import java.util.concurrent.*;
 public class TaskSchedulerApp {
     private ScheduledExecutorService scheduler;
 
+    /*
+        Initialize the scheduled executor service.
+        1. Start () : This method initializes the ScheduledExecutorService with a thread pool of 4 threads.
+        2. scheduleTask (Runnable task, long interval) : This method schedules a task to run repeatedly at the specified interval.
+        3. stop () : This method stops the ScheduledExecutorService by shutting it down and waiting for 60 seconds for the tasks to complete. If the tasks don't complete in time, it forces a shutdown.
+
+     */
+
     public void start() {
         scheduler = Executors.newScheduledThreadPool(4);  // Create a thread pool with 4 threads
         System.out.println("Task Scheduler started");
